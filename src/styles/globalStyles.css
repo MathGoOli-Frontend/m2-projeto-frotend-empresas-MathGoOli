@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: Inter;
+}
+:root{
+    /* colors */
+    --brand-1: #0000ff;
+    --brand-2: #3532FF;
+
+    --grey-1: #212529;
+    --grey-2: #495057;
+    --grey-3: #ADB5BD;
+    --grey-4: #E9ECEF;
+    --grey-5: #F1F3F5;
+    --color-mode: #F1F3F5;
+
+    --action-1: #36B37E;
+    --action-2: #FF5630;
+    --action-3: #FFAB00;
+
+    /* Chip */
+    --chip-radius: .75rem;
+    --chip-height: 2rem;
+    --chip-font-size: 1rem;
+
+    /* fonts */
+    --font-title-1: 1.25rem;
+    --font-title-2: 1rem;
+
+    --font-text-1: 0.875rem;
+    --font-text-2: ;
+    
+
+    
+}
+
+/* button */
+.btn{
+    color: var(--color-mode);
+    background-color: var(--brand-1);
+}
+
+.btn:hover{
+    color: var(--color-mode);
+    background-color: var(--brand-2);
+}
+
+.btn-outlined{
+    color: var(--brand-1);
+    background-color: var(--color-mode);
+    border: 1px solid var(--brand-1);
+}
+
+/* Chips */
+
+.chip{
+    border: 1px solid var(--brand-1);
+    color: var(--brand-1);
+    border-radius: var(--chip-radius);
+    height: var(--chip-height);
+
+    font-size: var(--chip-font-size);
+    font-weight: 400;
+}
+
+.chip-disabled{
+    border: 1px solid var(--grey-2);
+    color: var(--grey-2);
+}
+
+/* Fonts */
+
+.title-1-bold{
+    font-size: var(--font-title-1);
+    font-weight: 600;
+}
+
+.title-2-bold{
+    font-size: var(--font-title-2);
+    font-weight: 600;
+}
+
+.title-2-medium{
+    font-size: var(--font-title-2);
+    font-weight: 500;
+}
+
+.text-1-regular{
+    font-size: var(--font-text-1);
+    font-weight: 400;
+}
+
+.text-1-medium{
+    font-size: var(--font-text-1);
+    font-weight: 500;
+}
+.text-1-bold{
+    font-size: var(--font-text-1);
+    font-weight: 600;
+}
+
+.text-2-regular{
+    font-size: var(--font-text-2);
+    font-weight: 400;
+}
