@@ -1,8 +1,23 @@
+/* import da font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 body{
     font-family: Inter;
+    overflow: hidden;
 }
+
+/* reset */
+header, body, main, section, div, form{
+    margin: 0;
+}
+
+li, ul, form{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* Global variables */
 :root{
     /* colors */
     --brand-1: #0000ff;
@@ -14,6 +29,7 @@ body{
     --grey-4: #E9ECEF;
     --grey-5: #F1F3F5;
     --color-mode: #F1F3F5;
+    --white: #fff;
 
     --action-1: #36B37E;
     --action-2: #FF5630;
@@ -29,16 +45,26 @@ body{
     --font-title-2: 1rem;
 
     --font-text-1: 0.875rem;
-    --font-text-2: ;
-    
+    --font-text-2: 0.75rem;
 
+    --form-header: 2.5rem;
+    --form-title: 1.125rem;
+
+    --font-btn-1: 1.125rem;
     
 }
 
 /* button */
 .btn{
+    width: 142px;
+    height: 48px;
+    font-size: var(--font-btn-1);
     color: var(--color-mode);
     background-color: var(--brand-1);
+    border: 1px solid var(--brand-1);
+
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .btn:hover{
@@ -48,8 +74,12 @@ body{
 
 .btn-outlined{
     color: var(--brand-1);
-    background-color: var(--color-mode);
+    background-color: var(--white);
     border: 1px solid var(--brand-1);
+}
+.btn-outlined:hover{
+    color: var(--color-mode);
+    background-color: var(--brand-1);
 }
 
 /* Chips */
@@ -59,7 +89,7 @@ body{
     color: var(--brand-1);
     border-radius: var(--chip-radius);
     height: var(--chip-height);
-
+    padding: 2px 8px;
     font-size: var(--chip-font-size);
     font-weight: 400;
 }
@@ -70,7 +100,6 @@ body{
 }
 
 /* Fonts */
-
 .title-1-bold{
     font-size: var(--font-title-1);
     font-weight: 600;
@@ -104,3 +133,73 @@ body{
     font-size: var(--font-text-2);
     font-weight: 400;
 }
+/* Header */
+.header__headerContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-3);
+    height: 12vh;
+
+    box-sizing: border-box;
+
+}
+
+.header__logoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.ball{
+    width: 16px;
+    height: 16px;
+    background-color: var(--brand-1);
+    border-radius: 50%;
+}
+.header__navDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+/* header end */
+
+/* toaster */
+
+.toast__container{
+    width: 300px;
+    height: 70px;
+
+    box-sizing: border-box;
+    position: absolute;
+    padding: 10px;
+    right: 10px;
+    bottom: 10px;
+
+
+    animation: toast 1s;
+}
+
+.bg-red{
+    background-color: rgb(189, 57, 5);
+    color: var(--color-mode);
+}
+.bg-green{
+    background-color: rgb(20, 170, 0);
+    color: var(--color-mode);
+}
+
+@keyframes toast{
+    from{
+        transform: translateX(100%);
+    }
+    90%{
+        transform: translateX(-5%)
+    }
+    to{
+        transform: translateX(0);
+    }
+} 
+
+/* toaster end */

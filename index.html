@@ -13,8 +13,45 @@
     <script type="module" src="./src/scripts/index.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Whereas</h1>
+    <!-- block access if you have the token -->
+    <script src="./src/scripts/access.js"></script>
+    <header class="header__headerContainer">
+        <div class="header__logoDiv">
+            <div class="ball"></div>
+            <h1>Kenzie Empresas</h1>
+        </div>
+        <nav class="header__navDiv">
+            <button data-url-for="./src/pages/login.html" class="btn btn-outlined btn-urlfor">Login</button>
+            <button data-url-for="./src/pages/register.html" class="btn btn-urlfor">Cadastrar</button>
+        </nav>
     </header>
+    <main class="main__container">
+        <section class="image__Container">
+            <img class="main__image" src="./src/img/home_image.svg" alt="">
+        </section>
+        <section class="list__container">
+            <div class="select__container">
+                <p>Selecionar Setor</p>
+                <img class="select__img" src="./src/img/triangle.svg" alt="">
+            </div>
+            <div class="select__listDiv ">
+                <ul class="select__list hidden">
+                    <li class="select__item" data-category-name="all" >Todas</li>
+
+                </ul>
+            </div>
+            <div class="companies__listContainer">
+                <h3 class="companies__title">Lista de Empresas</h3>
+                <ul class="companies__list">
+                    <li class="company__card">
+                        <h4 class="company__title">Name</h4>
+                        <span class="company__category chip">category</span>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
 </body>
 </html>

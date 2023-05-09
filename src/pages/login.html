@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenzie Empresas - Login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/loginRegister.css">
+    <!-- script -->
+    <script type="module" src="../scripts/login.js" defer></script>
+</head>
+<body>
+    <!-- block access if you have the token -->
+    <script src="../scripts/access.js"></script>
+
+    <header class="header__headerContainer">
+        <div class="header__logoDiv">
+            <div class="ball"></div>
+            <h1>Kenzie Empresas</h1>
+        </div>
+        <nav class="header__navDiv">
+            <button data-url-for="../../index.html" class="btn btn-outlined btn-urlfor">Home</button>
+            <button data-url-for="../pages/register.html" class="btn btn-urlfor">Cadastro</button>
+        </nav>
+    </header>
+    <main class="main__container">
+        <section class="form__container">
+            <h2 class="form__header title-1-bold">Login</h2>
+            <p class="form__text">Preecha os campos para realizar login</p>
+            <form class="form__form" action="">
+                <input class="form__input" name="email" type="text" placeholder="Seu e-mail">
+                <input class="form__input" name="password" type="password" placeholder="Sua senha">
+
+                <button class="btn form__button btn-login">Login</button>
+            </form>
+            <div class="other__container">
+                <p class="title-2-medium">ou</p>
+                <button data-url-for="../pages/register.html" class="btn btn-outlined form__button btn-login btn-urlfor">cadastre-se</button>
+
+            </div>
+        </section>
+        
+    </main>
+    
+</body>
+</html>

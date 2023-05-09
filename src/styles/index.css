@@ -1,0 +1,120 @@
+
+/* Header */
+/* Header Movido para global styles */
+/* header end */
+
+/* main */
+.main__container{
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+/* main end */
+
+.image__Container, .list__container{
+    width: 40%;
+}
+.list__container{
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    padding: 10px;
+}
+
+/* selection */
+.select__container{
+    width: 100%;
+    height: 52px;
+
+    border: 1px solid var(--brand-1);
+    background: var(--brand-1);
+    color: var(--color-mode);
+    padding: 5px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    box-sizing: border-box;
+    font-size: var(--font-title-1);
+
+    cursor: pointer;
+}
+.select__img{
+    width: 16px;
+    height: 16px;
+}
+.select__img-clicked{
+    transform: rotate(180deg);
+}
+.select__listDiv{
+    overflow: hidden;
+    position: absolute;
+    width: 40%;
+}
+.select__list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    animation: list .5s;
+    
+    
+}
+.select__item{
+    width: 100%;
+    list-style: none;
+    border: 1px solid var(--color-mode);
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: var(--font-title-1);
+
+    background-color: var(--color-mode);
+
+    cursor: pointer;
+}
+.select__item:hover{
+    background-color: var(--grey-4);
+}
+.companies__title{
+    font-size: 2rem;
+    padding: 0;
+    margin: 10px;
+}
+.companies__list{
+    padding-left: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.company__card{
+    padding: 10px;
+    border: 1px solid var(--brand-1);
+    
+}
+.company__title{
+    font-size: 1.25rem;
+    margin: 5px;
+}
+
+
+
+
+/* animation */
+
+@keyframes list{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.hidden{
+    display: none;
+}
