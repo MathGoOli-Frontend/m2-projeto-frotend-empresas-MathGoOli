@@ -78,6 +78,7 @@
 .select__item:hover{
     background-color: var(--grey-4);
 }
+
 .companies__title{
     font-size: 2rem;
     padding: 0;

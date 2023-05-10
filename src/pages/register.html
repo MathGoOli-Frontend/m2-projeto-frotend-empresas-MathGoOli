@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="../styles/globalStyles.css">
     <link rel="stylesheet" href="../styles/loginRegister.css">
     <!-- script -->
-    <script type="module" src="../scripts/login.js" defer></script>
+    <script type="module" src="../scripts/register.js" defer></script>
+    <!-- redirect access if you have the token -->
+    <script src="../scripts/access.js"></script>
 </head>
 <body>
-    <!-- block access if you have the token -->
-    <script src="../scripts/access.js"></script>
 
     <header class="header__headerContainer">
         <div class="header__logoDiv">
@@ -23,22 +23,23 @@
         </div>
         <nav class="header__navDiv">
             <button data-url-for="../../index.html" class="btn btn-outlined btn-urlfor">Home</button>
-            <button data-url-for="../pages/register.html" class="btn btn-urlfor">Cadastro</button>
+            <button data-url-for="../pages/login.html" class="btn btn-urlfor">Login</button>
         </nav>
     </header>
     <main class="main__container">
         <section class="form__container">
-            <h2 class="form__header title-1-bold">Login</h2>
-            <p class="form__text">Preecha os campos para realizar login</p>
+            <h2 class="form__header title-1-bold">Cadastre-se</h2>
+            
             <form class="form__form" action="">
+                <input class="form__input" name="name" type="text" placeholder="Seu nome">
                 <input class="form__input" name="email" type="text" placeholder="Seu e-mail">
                 <input class="form__input" name="password" type="password" placeholder="Sua senha">
 
-                <button class="btn form__button btn-login">Login</button>
+                <button class="btn form__button btn-submit btn-login">Login</button>
             </form>
             <div class="other__container">
-                <p class="title-2-medium">ou</p>
-                <button data-url-for="../pages/register.html" class="btn btn-outlined form__button btn-login btn-urlfor">cadastre-se</button>
+                <p class="title-2-medium"></p>
+                <button data-url-for="../../index.html" class="btn btn-outlined form__button btn-login btn-urlfor">Retornar</button>
 
             </div>
         </section>

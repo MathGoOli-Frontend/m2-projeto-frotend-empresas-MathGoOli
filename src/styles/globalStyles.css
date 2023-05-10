@@ -3,7 +3,8 @@
 
 body{
     font-family: Inter;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* reset */
@@ -51,6 +52,7 @@ li, ul, form{
     --form-title: 1.125rem;
 
     --font-btn-1: 1.125rem;
+    --font-btn-weigth: 700;
     
 }
 
@@ -59,6 +61,7 @@ li, ul, form{
     width: 142px;
     height: 48px;
     font-size: var(--font-btn-1);
+    font-weight: var(--font-btn-weigth);
     color: var(--color-mode);
     background-color: var(--brand-1);
     border: 1px solid var(--brand-1);

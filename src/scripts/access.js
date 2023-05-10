@@ -1,13 +1,10 @@
 const verifyAccess = () => {
-    const body = document.querySelector("body")
-    body.classList.add("hidden")
 
     const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
 
-    console.log()
     if(token){
         if(token.isAdm){
-            if(window.location.pathname === "/index.html"){
+            if(window.location.pathname === "/index.html" || window.location.pathname === "/"){
                 window.location.replace("./src/pages/admin.html")
             }else{
                 window.location.replace("../pages/admin.html")
@@ -20,7 +17,6 @@ const verifyAccess = () => {
             }
         }
     }
-    body.classList.remove("hidden")
 }
 
 verifyAccess()

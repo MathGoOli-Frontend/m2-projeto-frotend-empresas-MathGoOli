@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="../styles/loginRegister.css">
     <!-- script -->
     <script type="module" src="../scripts/login.js" defer></script>
+    <!-- Redirect access if you have the token -->
+    <script src="../scripts/access.js"></script>
 </head>
 <body>
-    <!-- block access if you have the token -->
-    <script src="../scripts/access.js"></script>
 
     <header class="header__headerContainer">
         <div class="header__logoDiv">
@@ -34,7 +34,7 @@
                 <input class="form__input" name="email" type="text" placeholder="Seu e-mail">
                 <input class="form__input" name="password" type="password" placeholder="Sua senha">
 
-                <button class="btn form__button btn-login">Login</button>
+                <button class="btn form__button btn-login btn-submit">Login</button>
             </form>
             <div class="other__container">
                 <p class="title-2-medium">ou</p>

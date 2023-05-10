@@ -1,8 +1,8 @@
 import {buttonsRedirectionsHandle} from "./redirectButtons.js"
 import {toasterHandle} from "./toaster.js"
-import {getLoginToken} from "./apirequests.js"
+import {postNewEmploye} from "./apirequests.js"
 
-const loginHandle = async () => {
+const registerHandle = async () => {
     const inputs = document.querySelectorAll(".form__input")
     const submitButton = document.querySelector(".btn-submit")
 
@@ -20,7 +20,7 @@ const loginHandle = async () => {
         if(isValid){
             inputs.forEach(input => { data[input.name] = input.value });
             
-            await getLoginToken(data)
+            await postNewEmploye(data)
         } else {
             toasterHandle("Ooops preencha todos os campos", "bg-red")
         }
@@ -28,7 +28,6 @@ const loginHandle = async () => {
     })
 }
 
-
-
+// chamada das funções
+registerHandle()
 buttonsRedirectionsHandle()
-loginHandle()

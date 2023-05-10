@@ -1,6 +1,8 @@
 import {toasterHandle} from "./toaster.js"
 
 const baseURL = "http://localhost:3333"
+
+// Rotas sem autenticação
 const requestHeaders = {
     'Content-Type': 'application/json'
 }
@@ -63,3 +65,29 @@ export const getLoginToken = async(data) => {
     }
 
 }
+
+export const postNewEmploye = async (data) => {
+    const config = {
+        method: "POST",
+        headers: requestHeaders,
+
+        body: JSON.stringify(data)
+    }
+
+    await fetch(`${baseURL}/employees/create`, config).then(async (res) => {
+        if (res.ok){
+        const employe = await res.json()
+
+            toasterHandle(`Funcionario ${employe.name} criado`, "bg-green") 
+            return employe
+        } else {
+            const message = await res.json()
+            toasterHandle(`Erro: ${message.message}`, "bg-red")
+        }
+    })
+}
+// Rotas Token de Admin
+
+
+
+// Rotas Funcionários
