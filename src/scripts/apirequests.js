@@ -87,7 +87,271 @@ export const postNewEmploye = async (data) => {
     })
 }
 // Rotas Token de Admin
+// 
+export const readAllEmployees = async () => { // /employees/readAll
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employees = await fetch(`${baseURL}/employees/readAll`, config).then((res) =>{
+        return res.json()
+    })
+    return employees
+}
+
+export const readAllEmployeesOutOfWork = async () => { // /employees/outOfWork
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employees = await fetch(`${baseURL}/employees/outOfWork`, config).then((res) =>{
+        return res.json()
+    })
+    return employees
+}
+
+export const patchUpdateEmployee = async (employee_id) => { // /employees/updateEmployee/{employee_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/employees/updateEmployee/${employee_id}`, config).then((res) =>{
+        return res.json()
+    })
+    return employee
+}
+
+export const deleteEmployee = async (employee_id) => { // /employees/deleteEmployee/{employee_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/employees/deleteEmployee/${employee_id}`, config).then((res) =>{
+        return res.json()
+    })
+    return employee
+}
+
+export const patchHireEmployee = async (employee_id, departmentId) => { // /employees/hireEmployee/{employee_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+        body: JSON.stringify({
+            department_id: departmentId
+        })
+
+    }
+    const employee = await fetch(`${baseURL}/employees/hireEmployee/${employee_id}`, config).then((res) =>{
+        if(res.ok){
+            return res.json()
+        }
+        
+    })
+    return employee
+}
+
+export const patchDismissEmployee = async (employee_id) => { // /employees/dismissEmployee/{employee_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/employees/dismissEmployee/${employee_id}`, config).then((res) =>{
+        if(res.ok){
+            return res.json()
+        }
+        return false
+    })
+    return employee
+}
+
+export const getCompanyById = async (companyId) => { // /companies/readById/{company_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const company = await fetch(`${baseURL}/companies/readById/${companyId}`, config).then((res) =>{
+        return res.json()
+    })
+    return company
+}
+
+export const patchCreateDepartment = async (employee_id, data) => { // /departments/create
+    /* 
+        {
+            "name": "Tecnologia da Informação",
+            "description": "Departamento responsável pela parte de TI",
+            "company_id": "86bffcd8-ff51-4b42-8dd2-e60639a3dc13"
+        } 
+    */
+
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`,
+            body: JSON.stringify(data)
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/departments/create`, config).then((res) =>{
+        return res.json()
+    })
+    return employee
+}
+
+export const getdepartmentsReadAll = async () => {  // /departments/readAll
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const company = await fetch(`${baseURL}/departments/readAll`, config).then((res) =>{
+        return res.json()
+    })
+    return company
+}
+
+export const readDepartmentsByCompany = async (companyId) => { // GET /departments/readByCompany/
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const departments = await fetch(`${baseURL}/departments/readByCompany/${companyId}`, config).then((res) =>{
+        return res.json()
+    })
+    return departments
+}
 
 
+export const patchUpdateDepartment = async (department_id, data) => { // /departments/update/{department_id}
+    /* 
+        {
+            "name": "Tecnologia da Informação",
+            "description": "Departamento responsável pela parte de TI",
+            "company_id": "86bffcd8-ff51-4b42-8dd2-e60639a3dc13"
+        } 
+    */
+
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`,
+            body: JSON.stringify(data)
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/departments/update/${department_id}`, config).then((res) =>{
+        return res.json()
+    })
+    return employee
+}
+
+export const deletedepartment = async (department_id) => { // /departments/delete/{department_id}
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const employee = await fetch(`${baseURL}/departments/delete/${department_id}`, config).then((res) =>{
+        return res.json()
+    })
+    return employee
+}
 
 // Rotas Funcionários
+
+export const getUserInfo = async () => {
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const user = await fetch(`${baseURL}/employees/profile`, config).then((res) =>{
+        return res.json()
+    })
+    return user
+}
+
+export const getDepartment = async (departmentId) => {
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+
+    const config = {
+        method: "GET",
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token.authToken}`
+        },
+
+    }
+    const department = await fetch(`${baseURL}/departments/readById/${departmentId}`, config).then((res) =>{
+        return res.json()
+    })
+    return department
+}

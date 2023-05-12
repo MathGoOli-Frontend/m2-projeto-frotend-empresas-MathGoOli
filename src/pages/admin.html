@@ -4,9 +4,113 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kenzie Empresas - ADM</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <!-- script -->
+    <script type="module" src="../scripts/admin.js" defer></script>
+    <!-- redirect access if you dont have the token -->
+    <!-- <script src="../scripts/"></script> -->
 </head>
 <body>
-    Adm
+    <header class="header__headerContainer">
+        <div class="header__logoDiv">
+            <div class="ball-admin"></div>
+            <h1>Kenzie Empresas</h1>
+        </div>
+        <nav class="header__navDiv">
+            <button data-url-for="../../index.html" class="btn btn-outlined btn-logout">Logout</button>
+            
+        </nav>
+    </header>
+    <main>
+        <section class="companies__section">
+            <div class="companies__container">
+                <div class="select__container">
+                    <p>Selecionar Empresa</p>
+                    <img class="select__img" src="../img/triangle.svg" alt="">
+                </div>
+                <div class="select__listDiv ">
+                    <ul class="select__list hidden">
+                        <!-- <li class="select__item" data-category-name="all" >Todas</li> -->
+    
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="department__container">
+            <div class="department__header">
+                <h2>Departamentos</h2>
+                <button class="btn">+ Criar</button>
+            </div>
+            <ul class="department__deck">
+                <!-- <li class="department__card">
+                    <div class="department__text_div">
+                        <h3 class="department__title title-2-bold">Departamento nome</h3>
+                        <p class="department__text text-1-regular">Departamento descrição</p>
+                        <p class="department__text text-1-regular">nome da companhia</p>
+                    </div>
+                    <div class="department__buttons_div">
+                        <img class="department__buttons btn-show" src="../img/eye.svg" alt="">
+                        <img class="department__buttons btn-write" src="../img/pencil.svg" alt="">
+                        <img class="department__buttons btn-delete" src="../img/trash.svg" alt="">
+                    </div>
+                </li> -->
+                
+            </li>
+        </section>
+        <section class="user__container">
+            <div class="user__header">
+                <h2>Usuários Cadastrados</h2>
+                
+            </div>
+            <ul class="user__deck">
+                <!-- <li class="user__card">
+                    <div class="user__text_div">
+                        <h3 class="user__title title-2-bold">Departamento nome</h3>
+                        <p class="user__text text-1-regular">Departamento descrição</p>
+                        <p class="user__text text-1-regular">nome da companhia</p>
+                    </div>
+                    <div class="user__buttons_div">
+                        <img class="user__buttons btn-show" src="../img/eye.svg" alt="">
+                        <img class="user__buttons btn-write" src="../img/pencil.svg" alt="">
+                        <img class="user__buttons btn-delete" src="../img/trash.svg" alt="">
+                    </div> -->
+                </li>
+                
+            </li>
+        </section>
+
+    </main>
+    <dialog class="dialog_department__dialog">
+        <div class="dialog_department__container">
+            <button class="title-1-bold closeModal_button" data-dialog-class=".dialog_department__dialog">x</button>
+            <h2 class="dialog_department__departmentName title-1-bold">Nome do departamento</h2>
+            <h3 class="dialog_department__departmentdescription title-2-bold">Descrição do departamento</h3>
+            <h3 class="dialog_department__companyName title-2-medium">Empresa pertencente</h3>
+            <div>
+                <select class="dialog_department__selection" name="" id="">
+                    <option class="hidden" value="">Selecionar usuario</option>
+                    
+                </select>
+                <button class="btn btn-green btn-hire">contratar</button>
+            </div>
+            <div class="overflow-on">
+                <ul class="dialog_department__employesDeck">
+                    <li class="dialog_department__employesCard">
+                        <!-- <h2 class="title-2-bold">Username</h1>
+                        <h3 class="title-2-medium">Company name</h2>
+                        <button class="dialog_department__deleteEmployee btn btn-action-2">Demitir</button> -->
+                    </li>
+                </ul>
+
+            </div>
+
+
+            
+        </div>
+    </dialog>
 </body>
 </html>

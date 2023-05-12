@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kenzie Empresas - user</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="../styles/globalStyles.css">
+    <link rel="stylesheet" href="../styles/user.css">
+    <!-- script -->
+    <script type="module" src="../scripts/user.js" defer></script>
+    <!-- redirect access if you dont have the token -->
+    <!-- <script src="../scripts/"></script> -->
 </head>
 <body>
-    User
+    <header class="header__headerContainer">
+        <div class="header__logoDiv">
+            <div class="ball"></div>
+            <h1>Kenzie Empresas</h1>
+        </div>
+        <nav class="header__navDiv">
+            <button data-url-for="../../index.html" class="btn btn-outlined btn-logout">Logout</button>
+            
+        </nav>
+    </header>
+    <main>
+        <section class="userInfo__container">
+            <h2 class="userInfo__username title-1-bold">Username</h2>
+            <p class="userInfo__email text-1-regular">email@mail.com</p>
+        </section>
+        <section>
+            <div class="department__info">
+                <h3 class="text-1-regular department__infoText">NomeCompanhia - nomeDepartamento</h3>
+            </div>
+            <div class="department__container">
+                
+                <ul class="employee__list">
+    
+                </ul>
+    
+            </div>
+        </section>
+        
+
+    </main>
+    
 </body>
 </html>

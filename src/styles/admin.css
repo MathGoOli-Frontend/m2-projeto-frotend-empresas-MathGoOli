@@ -1,0 +1,229 @@
+/* selection */
+main {    
+    padding: 1rem 10% 5% 10%;
+
+}
+.companies__section{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.companies__container{
+    width: 30%;
+
+}
+.select__container{
+    width: 100%;
+    height: 52px;
+
+    border: 1px solid var(--brand-1);
+    background: var(--brand-1);
+    color: var(--color-mode);
+    padding: 5px 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    outline: none;
+    box-sizing: border-box;
+    font-size: var(--font-title-1);
+
+    cursor: pointer;
+}
+.select__img{
+    width: 16px;
+    height: 16px;
+}
+.select__img-clicked{
+    transform: rotate(180deg);
+}
+.select__listDiv{
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+}
+.select__list{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    animation: list .5s;
+    
+    
+}
+.select__item{
+    width: 80%;
+    list-style: none;
+    border: 1px solid var(--color-mode);
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: var(--font-title-1);
+
+    background-color: var(--color-mode);
+
+    cursor: pointer;
+}
+.select__item:hover{
+    background-color: var(--grey-4);
+}
+/*  */
+.department__container .user__container{
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.department__header, .user__header{
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.department__deck, .user__deck{
+    /* width: 96%; */
+    height: 40vh;
+    padding: 1rem 1.4rem 0 1.4rem;
+    background-color: var(--color-mode);
+
+    display: flex;
+
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scrollbar-color: var(--brand-1);
+    
+}
+.department__deck:hover, .user__deck:hover{
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.44);
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.44);
+}
+.department__card, .user__card{
+    width: 40%;
+    height: 40%;
+    padding: 10px;
+    border: 1px solid var(--brand-1);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.department__title, .department__text, .user__title, .user__deck{
+    padding: 1px;
+    margin: 1px;
+}
+/* .department__text_div{
+
+} */
+.department__buttons_div, .user__buttons_div{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.department__buttons, .user__buttons{
+    width: 25px;
+    height: 25px;
+
+    cursor: pointer;
+}
+
+/* dialog */
+.dialog_department__dialog{
+    border: none;
+}
+.dialog_department__container{
+    width: 60vw;
+    height: 70vh;
+
+}
+.closeModal_button{
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    cursor: pointer;
+}
+
+.dialog_department__selection{
+    width: calc(100% - 142px - 3rem);
+    height: 48px;
+    border-radius: 0;
+
+    box-sizing: border-box;
+    
+    border: 1px solid var(--grey-2);
+    color: var(--grey-2);
+}
+
+.dialog_department__selection option{
+    background-color: var(--grey-4);
+    border-radius: 0;
+}
+.overflow-on{
+    overflow-x: scroll;
+}
+.dialog_department__employesDeck{
+    display: flex;
+    gap: 5px;
+    width: auto;
+    background-color: var(--color-mode);
+    margin-top: 10px;
+    padding: 5px;
+    height: 40%;
+    
+    
+}
+.dialog_department__employesCard{
+    width: 250px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation */
+
+@keyframes list{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+.hidden{
+    display: none;
+}

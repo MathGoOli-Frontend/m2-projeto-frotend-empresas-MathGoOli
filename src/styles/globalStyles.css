@@ -5,6 +5,7 @@ body{
     font-family: Inter;
     overflow-y: auto;
     overflow-x: hidden;
+
 }
 
 /* reset */
@@ -23,6 +24,7 @@ li, ul, form{
     /* colors */
     --brand-1: #0000ff;
     --brand-2: #3532FF;
+    --admin-logo: rgba(66, 0, 255, 0.5);
 
     --grey-1: #212529;
     --grey-2: #495057;
@@ -35,6 +37,10 @@ li, ul, form{
     --action-1: #36B37E;
     --action-2: #FF5630;
     --action-3: #FFAB00;
+
+    --action-1-hover: rgb(54, 179, 127);
+    --action-2-hover: #FF5630;
+    --action-3-hover: #FFAB00;
 
     /* Chip */
     --chip-radius: .75rem;
@@ -54,6 +60,15 @@ li, ul, form{
     --font-btn-1: 1.125rem;
     --font-btn-weigth: 700;
     
+}
+::-webkit-scrollbar{
+    background-color: var(--grey-4);
+    outline: 1px solid var(--grey-4);
+    color: var(--brand-1);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--brand-1);
+    outline: 1px solid var(--brand-1);
 }
 
 /* button */
@@ -83,6 +98,28 @@ li, ul, form{
 .btn-outlined:hover{
     color: var(--color-mode);
     background-color: var(--brand-1);
+}
+.btn-green{
+    color: var(--color-mode);
+    background-color: var(--action-1);
+    border: 1px solid var(--action-1);
+}
+.btn-green:hover{
+    color: var(--color-mode);
+    background-color: var(--action-1-hover);
+    border: 1px solid var(--action-1-hover);
+}
+
+.btn-action-2{
+    width: 90%;
+    color: var(--action-2);
+    background-color: var(--white);
+    border: 1px solid var(--action-2);
+}
+.btn-action-2:hover{
+    color: var(--color-mode);
+    background-color: var(--action-2);
+    border: 1px solid var(--action-2);
 }
 
 /* Chips */
@@ -160,6 +197,12 @@ li, ul, form{
     background-color: var(--brand-1);
     border-radius: 50%;
 }
+.ball-admin{
+    background-color: var(--admin-logo);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
 .header__navDiv{
     display: flex;
     justify-content: center;
@@ -185,11 +228,11 @@ li, ul, form{
 }
 
 .bg-red{
-    background-color: rgb(189, 57, 5);
+    background-color: var(--action-2);
     color: var(--color-mode);
 }
 .bg-green{
-    background-color: rgb(20, 170, 0);
+    background-color: var(--action-1);
     color: var(--color-mode);
 }
 
