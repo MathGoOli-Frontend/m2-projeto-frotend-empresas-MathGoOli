@@ -41,7 +41,33 @@ const userInfoHandle = async () => {
         h2.innerText = "Você ainda não foi contratado"
         employeeList.appendChild(h2)
     }
+
+    employeesCardsHandle(user.department_id)
 }
+
+const employeesCardsHandle = async (departmentId) => {
+    const deck = document.querySelector(".employee__list")
+    deck.innerHTML = ""
+
+    const department = await getDepartment(departmentId)
+    const employees = department.employees
+    console.log(employees)
+    employees.forEach(employee => {
+        const div = document.createElement("li")
+        div.classList.add("employee__card")
+
+        const employeeName = document.createElement("h2")
+        employeeName.classList.add("title-2-bold")
+        employeeName.innerText = employee.name
+
+        div.appendChild(employeeName)
+
+        deck.appendChild(div)
+    });
+
+
+}   
+
 // chamar funções abaixo
 logoutHandle()
 
