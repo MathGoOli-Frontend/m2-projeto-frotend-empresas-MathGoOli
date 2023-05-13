@@ -43,7 +43,7 @@
         <section class="department__container">
             <div class="department__header">
                 <h2>Departamentos</h2>
-                <button class="btn">+ Criar</button>
+                <button class="btn btn-createDepartment">+ Criar</button>
             </div>
             <ul class="department__deck">
                 <!-- <li class="department__card">
@@ -86,7 +86,7 @@
     </main>
     <dialog class="dialog_department__dialog">
         <div class="dialog_department__container">
-            <button class="title-1-bold closeModal_button" data-dialog-class=".dialog_department__dialog">x</button>
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_department__dialog">x</span>
             <h2 class="dialog_department__departmentName title-1-bold">Nome do departamento</h2>
             <h3 class="dialog_department__departmentdescription title-2-bold">Descrição do departamento</h3>
             <h3 class="dialog_department__companyName title-2-medium">Empresa pertencente</h3>
@@ -112,5 +112,51 @@
             
         </div>
     </dialog>
+    <dialog class="dialog_createDepartment__dialog">
+        <div class="dialog_createDepartment__container">
+            <h2 class="title-1-bold">Criar departamento</h2>
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_createDepartment__dialog">x</span>
+            <input class="dialog_createDepartment__input" type="text" name="name" placeholder="Nome do departamento">
+            <input class="dialog_createDepartment__input" type="text" name="description" placeholder="Descrição">
+            <select class="dialog_createDepartment__input dialog_createDepartment__select" name="company_id" id="">
+                <option class="hidden" value="">Selecionar empresa</option>
+            </select>
+            <button class="btn btn-green dialog_createDepartment__button">Criar</button>
+            
+        </div>
+    </dialog>
+    <dialog class="dialog_editDepartment__dialog">
+        <div class="dialog_editDepartment__container">
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_editDepartment__dialog">x</span>
+            <h2 class="title-1-bold">Editar Departamento</h2>
+            <textarea class="dialog_editDepartment__input" type="text"></textarea>
+            <button class="btn btn-green dialog_editDepartment__button">Salvar</button>
+        </div>
+    </dialog>
+    <dialog class="dialog_removeDepartment__dialog">
+        <div class="dialog_removeDepartment__container">
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_removeDepartment__dialog">x</span>
+            <h2 class="dialog_removeDepartment__text">Realmente deseja remover o Departamento NOME e  demitir seus funcionários?</h2>
+            <button class="btn dialog_removeDepartment__button btn-orange">Remover</button>
+    
+        </div>
+    </dialog>
+    <dialog class="dialog_editUser__dialog">
+        <div class="dialog_editUser__container">
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_editUser__dialog">x</span>
+            <h2 class="title-1-bold">Editar usuário</h2>
+            <input class="dialog_editUser__input" type="text" name="name" placeholder="Nome">
+            <input class="dialog_editUser__input" type="text" name="email" placeholder="e-mail">
+            <button class="btn btn-green dialog_editUser__submitbutton">Salvar</button>
+        </div>
+    </dialog>
+    <dialog class="dialog_deleteUser__dialog">
+        <div class="dialog_deleteUser__container">
+            <span class="title-1-bold closeModal_button" data-dialog-class=".dialog_deleteUser__dialog">x</span>
+            <h2 class="title-1-bold dialog_deleteUser__text">Realmente deseja remover o usuário NOME</h2>
+            <button class="btn dialog_deleteUser__button btn-orange">Remover</button>
+        </div>
+    </dialog>
+    
 </body>
 </html>

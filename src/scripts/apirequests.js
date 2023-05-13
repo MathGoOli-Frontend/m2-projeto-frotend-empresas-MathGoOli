@@ -122,7 +122,7 @@ export const readAllEmployeesOutOfWork = async () => { // /employees/outOfWork
     return employees
 }
 
-export const patchUpdateEmployee = async (employee_id) => { // /employees/updateEmployee/{employee_id}
+export const patchUpdateEmployee = async (employee_id, data) => { // /employees/updateEmployee/{employee_id}
     const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
 
     const config = {
@@ -131,6 +131,7 @@ export const patchUpdateEmployee = async (employee_id) => { // /employees/update
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token.authToken}`
         },
+        body: JSON.stringify(data)
 
     }
     const employee = await fetch(`${baseURL}/employees/updateEmployee/${employee_id}`, config).then((res) =>{
@@ -143,7 +144,7 @@ export const deleteEmployee = async (employee_id) => { // /employees/deleteEmplo
     const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
 
     const config = {
-        method: "PATCH",
+        method: "DELETE",
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token.authToken}`
@@ -216,7 +217,7 @@ export const getCompanyById = async (companyId) => { // /companies/readById/{com
     return company
 }
 
-export const patchCreateDepartment = async (employee_id, data) => { // /departments/create
+export const postCreateDepartment = async (data) => { // /departments/create
     /* 
         {
             "name": "Tecnologia da Informação",
@@ -228,18 +229,20 @@ export const patchCreateDepartment = async (employee_id, data) => { // /departme
     const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
 
     const config = {
-        method: "PATCH",
+        method: "POST",
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token.authToken}`,
-            body: JSON.stringify(data)
         },
+        body: JSON.stringify(data)
 
     }
-    const employee = await fetch(`${baseURL}/departments/create`, config).then((res) =>{
-        return res.json()
+    const department = await fetch(`${baseURL}/departments/create`, config).then((res) =>{
+        if(res.ok){
+            return res.json()
+        }
     })
-    return employee
+    return department
 }
 
 export const getdepartmentsReadAll = async () => {  // /departments/readAll
@@ -293,8 +296,9 @@ export const patchUpdateDepartment = async (department_id, data) => { // /depart
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token.authToken}`,
-            body: JSON.stringify(data)
+            
         },
+        body: JSON.stringify(data)
 
     }
     const employee = await fetch(`${baseURL}/departments/update/${department_id}`, config).then((res) =>{
@@ -307,17 +311,17 @@ export const deletedepartment = async (department_id) => { // /departments/delet
     const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
 
     const config = {
-        method: "PATCH",
+        method: "DELETE",
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token.authToken}`
         },
 
     }
-    const employee = await fetch(`${baseURL}/departments/delete/${department_id}`, config).then((res) =>{
+    const department = await fetch(`${baseURL}/departments/delete/${department_id}`, config).then((res) =>{
         return res.json()
     })
-    return employee
+    return department
 }
 
 // Rotas Funcionários
