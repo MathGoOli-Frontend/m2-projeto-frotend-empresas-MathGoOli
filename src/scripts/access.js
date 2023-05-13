@@ -19,4 +19,21 @@ const verifyAccess = () => {
     }
 }
 
-verifyAccess()
+const verifyAdminAccess = () => {
+    const token = JSON.parse(localStorage.getItem("@kenzieEmpresas:token"))
+    if(token){
+        if(!token.isAdm && window.location.pathname === "/admin.html"){
+            window.location.replace("../../index.html")
+        }
+    } else {
+        window.location.replace("../../index.html")
+    }
+    
+
+}
+
+if(window.location.pathname === "/src/pages/admin.html" || window.location.pathname === "/src/pages/user.html"){
+    verifyAdminAccess()
+}else{
+    verifyAccess()
+}
